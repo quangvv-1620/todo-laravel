@@ -9,6 +9,7 @@ $factory->define(App\Todo::class, function (Faker $faker) {
     return [
         'name' => $faker->sentence(),
         'description' => $faker->paragraph(4),
-        'completed' => false
+        'completed' => false,
+        'category_id' => 1
     ];
 });
