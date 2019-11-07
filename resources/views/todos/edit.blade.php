@@ -42,7 +42,7 @@
             </div>
 
             <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="completed" name="completed" value="1" {{ $todo->completed === 1 ? 'checked' : '' }}>
+              <input type="checkbox" class="form-check-input" id="completed" name="completed" value="1" {{ $todo->completed === true ? 'checked' : '' }}>
               <label class="form-check-label" for="completed">Completed</label>
             </div>
             

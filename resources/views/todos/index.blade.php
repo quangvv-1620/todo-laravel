@@ -29,7 +29,7 @@
             <ul class="list-group">
               <li class="list-group-item">
                 {{ $todo->name }}
-                @if($todo->completed === 1)
+                @if($todo->completed == true)
                   <span class="badge badge-success">Completed</span>
                 @else
                   <span class="badge badge-info">Open</span>
