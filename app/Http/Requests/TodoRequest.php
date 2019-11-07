@@ -25,7 +25,8 @@ class TodoRequest extends FormRequest
     {
         return [
             'name' => 'required|max:200',
-            'description' => 'required|max:1000'
+            'description' => 'required|max:1000',
+            'category_id' => 'required',
         ];
     }
 

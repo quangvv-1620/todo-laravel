@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'TodoController@index');
 
 // Route::get('/users', function () {
 //     return "Users!";
@@ -33,10 +31,10 @@ Route::get('/role', function() {
     echo "asddddaad";
 })->middleware('checkage:20');
 
-Route::resource('posts', 'PostController');
 Route::resource('contacts', 'ContactController');
 Route::get('/users', 'UserController@index');
 Route::resource('todos', 'TodoController')->middleware('auth');
+Route::get('/todos/search/{params?}', 'TodoController@search');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

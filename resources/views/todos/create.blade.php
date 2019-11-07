@@ -27,6 +27,16 @@
               <label for="name">Name</label>
               <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
             </div>
+
+            <div class="form-group">
+              <label for="category">Category</label>
+              <select class="form-control" id="category" name="category_id">
+                <option value="">Choose a category</option>
+                @foreach($categories as $category)
+                  <option value={{ $category->id }}>{{ $category->name }}</option>
+                @endforeach
+              </select>
+            </div>
             
             <div class="form-group form-check">
               <input type="checkbox" class="form-check-input" id="completed" name="completed" value="1">

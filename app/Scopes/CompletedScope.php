@@ -17,6 +17,6 @@ class CompletedScope implements Scope
      */
     public function apply(Builder $builder, Model $model)
     {
-        $builder->where('completed', '==', 1);
+        $builder->where('completed', '=', 1);
     }
 }
