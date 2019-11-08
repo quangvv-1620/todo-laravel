@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Test;
 
 class ContactController extends Controller
 {
@@ -20,6 +22,8 @@ class ContactController extends Controller
         $email_cookie = cookie('email', $email, $time);
 
         $data = ['mess' => "Thank you for your contact!"];
+
+        Mail::to($email)->send(new Test($email));
 
         return response()
             ->view('/contact', $data, 200)

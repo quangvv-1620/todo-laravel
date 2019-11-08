@@ -34,7 +34,8 @@ Route::get('/role', function() {
 Route::resource('contacts', 'ContactController');
 Route::get('/users', 'UserController@index');
 Route::resource('todos', 'TodoController')->middleware('auth');
-Route::get('/todos/search/{params?}', 'TodoController@search');
+// Route::get('/todos', 'TodoController@index');
+// Route::get('/search', 'TodoController@search')->name('search');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

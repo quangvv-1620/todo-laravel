@@ -14,7 +14,7 @@
             </div>
             
             <div class="col-md-9">
-              <form action="todos/search" method="GET" class="form-inline" role="form">
+              <form action="{{ route('todos.index') }}" method="GET" class="form-inline" role="form">
                 <div class="form-group">
                   <input type="text" class="form-control" name="name" placeholder="Enter name">
                 </div>
@@ -25,8 +25,8 @@
         </div>
 
         <div class="card-body">
-          @foreach($todos as $todo)
-            <ul class="list-group">
+          <ul class="list-group">
+            @foreach($todos as $todo)
               <li class="list-group-item">
                 {{ $todo->name }}
                 @if($todo->completed == true)
@@ -37,8 +37,8 @@
                 <a href="/todos/{{ $todo->id }}/edit"><button class="btn btn-primary btn-sm float-right">Edit</button></a>
                 <a href="/todos/{{ $todo->id }}"><button class="btn btn-primary btn-sm float-right">View</button></a>
               </li>
-            </ul>
-          @endforeach
+            @endforeach
+          </ul>
 
           {{ $todos->links() }}
         </div>

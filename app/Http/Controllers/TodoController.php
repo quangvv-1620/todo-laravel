@@ -10,17 +10,16 @@ use Illuminate\Support\Facades\Auth;
 
 class TodoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $todos = Todo::paginate(5);
+        if($request['name']) {
+            $todos = Todo::where('name', 'like', '%'.$request['name'].'%')->paginate(5);
+        } else {
+            $todos = Todo::paginate(5);
+        }
         $categories = Category::all();
         // dd($todos->currentPage());
         return view('todos.index')->with(['todos' => $todos, 'categories' => $categories]);
-    }
-
-    public function search(Request $request)
-    {
-        dd($request->input());
     }
 
     public function show($id)
